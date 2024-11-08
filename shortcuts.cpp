@@ -357,7 +357,21 @@ int main (){
         }
     }
 
-    
+    else if (nofroom>20 && nofroom<31)
+    {
+        discount=0.2*(roomp*nofroom);
+        cout<<" the discount is 20% which is : "<<discount<<endl;
+        total=(roomp*nofroom)-discount;
+        if (bookingd>5)
+        {
+            total=total-(total*0.05);
+            cout<<" the total price is : "<<total;
+        }
+        else
+        {
+        cout<<" the total price is : "<<total;
+        }
+    }
 
     else if (nofroom>30)
     {
