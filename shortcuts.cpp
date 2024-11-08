@@ -2791,8 +2791,15 @@ int main(){
     // Printing initial table 
     for (int i = 0; i < 3; i++)
     {
+        cout<<"     ";
         for (int j = 0; j < 3; j++)
         {
+            // for (int k = 0; k < 5; k++)
+            // {
+            //     cout<<" ";
+            // }
+            
+            
             //cout<<" "<<arr[i][j];
             if (j<2)
             {
@@ -2808,6 +2815,7 @@ int main(){
         cout<<endl;
         if (i<2)
         {
+            cout<<"     ";
         cout<<"-----------";
         }
         cout<<endl;
@@ -2820,7 +2828,7 @@ int main(){
     cout<<"Player X, enter row and column (0-2) "<<endl;
     cin>>Xx;
     cin>>Xy;
-    cout<<endl;
+    // cout<<endl;
 
     while (arr[Xx][Xy]!=0)
     {
@@ -2838,6 +2846,7 @@ int main(){
 
     for (int i = 0; i < 3; i++)
     {
+        cout<<"     ";
         for (int j = 0; j < 3; j++)
         {
             // cout<<"here"<<arr[i][j]<<"here"<<endl;
@@ -2878,6 +2887,7 @@ int main(){
             
         }
         cout<<endl;
+        cout<<"     ";
         if (i<2)
         {
         cout<<"-----------";
@@ -2905,7 +2915,7 @@ int main(){
 
 
        count=count+2;
-       cout<<endl;
+    //    cout<<endl;
        if (count>=9)
         {
             cout<<"Draw ";
@@ -2936,6 +2946,7 @@ int main(){
 
     for (int i = 0; i < 3; i++)
     {
+        cout<<"     ";
         for (int j = 0; j < 3; j++)
         {
              if (arr[i][j]==0)
@@ -2971,6 +2982,7 @@ int main(){
             
         }
         cout<<endl;
+        cout<<"     ";
         if (i<2)
         {
         cout<<"-----------";
