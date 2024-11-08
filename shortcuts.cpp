@@ -2796,11 +2796,11 @@ int main(){
             //cout<<" "<<arr[i][j];
             if (j<2)
             {
-            cout<<"&&&|";
+            cout<<"   |";
             }
             else{
                 
-            cout<<"&&&";
+            cout<<"   ";
 
             }
             
@@ -2846,11 +2846,11 @@ int main(){
                 if (j<2)
                 {
                     /* code */
-                    cout<<"&&&|";
+                    cout<<"   |";
                 }
                 else
                 {
-                    cout<<"&&&";
+                    cout<<"   ";
                     /* code */
                 }
                 
@@ -2860,14 +2860,14 @@ int main(){
             else
             {
                 // cout<<"here"<<endl;
-               cout<<"&"<<arr[i][j];
+               cout<<" "<<arr[i][j];
                 if (j<2)
                 {
-                cout<<"&|";
+                cout<<" |";
                 }
                 else
                 {
-                cout<<"&";
+                cout<<" ";
                     
                 } 
             }
@@ -2943,11 +2943,11 @@ int main(){
                 if (j<2)
                 {
                     /* code */
-                    cout<<"&&&|";
+                    cout<<"   |";
                 }
                 else
                 {
-                    cout<<"&&&";
+                    cout<<"   ";
                     /* code */
                 }
                 
@@ -2957,14 +2957,14 @@ int main(){
             else
             {
                 // cout<<"here"<<endl;
-               cout<<"&"<<arr[i][j];
+               cout<<" "<<arr[i][j];
                 if (j<2)
                 {
-                cout<<"&|";
+                cout<<" |";
                 }
                 else
                 {
-                cout<<"&";
+                cout<<" ";
                     
                 } 
             }
