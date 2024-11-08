@@ -2772,10 +2772,11 @@ int main(){
 #include <algorithm>
 using namespace std;
 
-int main(){
-    bool check=true;
-    char arr[3][3]={0};
-    cout<<"Tic-Tac-Toe Game "<<endl;
+int main()
+{
+    bool check = true;
+    char arr[3][3] = {0};
+    cout << "Tic-Tac-Toe Game " << endl;
 
     // for (int i = 0; i < 3; i++)
     // {
@@ -2784,255 +2785,256 @@ int main(){
     //         cout<<"Enter your value ";
     //         cin>>arr[i][j];
     //     }
-        
+
     // }
 
-
-    // Printing initial table 
+    // Printing initial table
     for (int i = 0; i < 3; i++)
     {
-        cout<<"     ";
+        cout << "     ";
         for (int j = 0; j < 3; j++)
         {
             // for (int k = 0; k < 5; k++)
             // {
             //     cout<<" ";
             // }
-            
-            
-            //cout<<" "<<arr[i][j];
-            if (j<2)
-            {
-            cout<<"   |";
-            }
-            else{
-                
-            cout<<"   ";
 
+            // cout<<" "<<arr[i][j];
+            if (j < 2)
+            {
+                cout << "   |";
             }
-            
+            else
+            {
+
+                cout << "   ";
+            }
         }
-        cout<<endl;
-        if (i<2)
+        cout << endl;
+        if (i < 2)
         {
-            cout<<"     ";
-        cout<<"-----------";
+            cout << "     ";
+            cout << "-----------";
         }
-        cout<<endl;
+        cout << endl;
     }
-    
+
     int count = 0;
     while (check)
     {
-    int Xx,Xy;
-    cout<<"Player X, enter row and column (0-2) "<<endl;
-    cin>>Xx;
-    cin>>Xy;
-    // cout<<endl;
+        int Xx, Xy;
+        cout << "Player X, enter row and column (0-2) " << endl;
+        cin >> Xx;
+        cin >> Xy;
+        // cout<<endl;
+        bool xPlayerCoordinatesCorrect = false;
 
-    while (arr[Xx][Xy]!=0)
-    {
-        cout<<"re-enter coordinates as incorrect coordinates entered "<<endl;
-        cout<<"Player X, enter row and column (0-2) "<<endl;
-        cin>>Xx;
-        cin>>Xy;
-    }
-    
-
-    
-    arr[Xx][Xy]='X';
-
-    // Printing table after X Players turn
-
-    for (int i = 0; i < 3; i++)
-    {
-        cout<<"     ";
-        for (int j = 0; j < 3; j++)
+        while (!xPlayerCoordinatesCorrect)
         {
-            // cout<<"here"<<arr[i][j]<<"here"<<endl;
-            if (arr[i][j]==0)
+            if (Xx > 3 || Xy > 3 || arr[Xx][Xy] != 0)
             {
-                if (j<2)
-                {
-                    /* code */
-                    cout<<"   |";
-                }
-                else
-                {
-                    cout<<"   ";
-                    /* code */
-                }
-                
-                
-                
+                cout << "re-enter coordinates as incorrect coordinates entered " << endl;
+                cout << "Player X, enter row and column (0-2) " << endl;
+                cin >> Xx;
+                cin >> Xy;
             }
             else
             {
-                // cout<<"here"<<endl;
-               cout<<" "<<arr[i][j];
-                if (j<2)
+                // cout<<"here2843---Xx:"<<Xx<<"Xy:"<<Xy<<endl;
+                xPlayerCoordinatesCorrect=true;
+            }
+            
+        }
+        // cout<<"here2847"<<endl;
+
+        // while (arr[Xx][Xy]!=0)
+        // {
+        // cout<<"re-enter coordinates as incorrect coordinates entered "<<endl;
+        // cout<<"Player X, enter row and column (0-2) "<<endl;
+        // cin>>Xx;
+        // cin>>Xy;
+        // }
+
+        arr[Xx][Xy]='X';
+
+        // Printing table after X Players turn
+
+        for (int i = 0; i < 3; i++)
+        {
+            // cout<<"here2863"<<endl;
+            cout << "     ";
+            for (int j = 0; j < 3; j++)
+            {
+                // cout<<"here"<<arr[i][j]<<"here"<<endl;
+                if (arr[i][j] == 0)
                 {
-                cout<<" |";
+                    if (j < 2)
+                    {
+                        /* code */
+                        cout << "   |";
+                    }
+                    else
+                    {
+                        cout << "   ";
+                        /* code */
+                    }
                 }
                 else
                 {
-                cout<<" ";
-                    
-                } 
+                    // cout<<"here"<<endl;
+                    cout << " " << arr[i][j];
+                    if (j < 2)
+                    {
+                        cout << " |";
+                    }
+                    else
+                    {
+                        cout << " ";
+                    }
+                }
             }
-            
-            
-            
-            
-            
+            cout << endl;
+            cout << "     ";
+            if (i < 2)
+            {
+                cout << "-----------";
+            }
+            cout << endl;
         }
-        cout<<endl;
-        cout<<"     ";
-        if (i<2)
+
+        if (arr[0][0] == 'X' && arr[1][0] == 'X' && arr[2][0] == 'X' || arr[0][1] == 'X' && arr[1][1] == 'X' && arr[2][1] == 'X' || arr[0][2] == 'X' && arr[1][2] == 'X' && arr[2][2] == 'X')
         {
-        cout<<"-----------";
-        }
-        cout<<endl;
-    }
-
-       if (arr[0][0] == 'X' && arr[1][0] == 'X' && arr[2][0] == 'X' || arr[0][1] == 'X' && arr[1][1] == 'X' && arr[2][1] == 'X' || arr[0][2] == 'X' && arr[1][2] == 'X' && arr[2][2] == 'X' )
-       {
-        cout<<"Player X Wins ";
-        break;
-       }
-
-       if (arr[0][0] == 'X' && arr[0][1] == 'X' && arr[0][2] == 'X' || arr[1][0] == 'X' && arr[1][1] == 'X' && arr[1][2] == 'X' || arr[2][0] == 'X' && arr[2][1] == 'X' && arr[2][2] == 'X' )
-       {
-        cout<<"Player X Wins ";
-        break;
-       }
-
-       if (arr[0][0] == 'X' && arr[1][1] == 'X' && arr[2][2] == 'X' || arr[0][2] == 'X' && arr[1][1] == 'X' && arr[2][0] == 'X' )
-       {
-        cout<<"Player X Wins ";
-        break;
-       }
-
-
-       count=count+2;
-    //    cout<<endl;
-       if (count>=9)
-        {
-            cout<<"Draw ";
-            cout<<endl;
+            cout << "Player X Wins ";
             break;
         }
-       
-       
 
-    int Yx,Yy;
-    cout<<"Player O, enter row and column (0-2) "<<endl;
-    cin>>Yx;
-    cin>>Yy;
-    //cout<<endl;
-
-    while (Xx==Yx && Xy==Yy || arr[Yx][Yy]!=0)
-    {
-        cout<<"re-enter coordinates as incorrect coordinates entered ";
-        cout<<"Player O, enter row and column (0-2) "<<endl;
-        cin>>Yx;
-        cin>>Yy;
-    }
-    
-    
-    
-    arr[Yx][Yy]='O';
-    // Printing table after O Players turn
-
-    for (int i = 0; i < 3; i++)
-    {
-        cout<<"     ";
-        for (int j = 0; j < 3; j++)
+        if (arr[0][0] == 'X' && arr[0][1] == 'X' && arr[0][2] == 'X' || arr[1][0] == 'X' && arr[1][1] == 'X' && arr[1][2] == 'X' || arr[2][0] == 'X' && arr[2][1] == 'X' && arr[2][2] == 'X')
         {
-             if (arr[i][j]==0)
+            cout << "Player X Wins ";
+            break;
+        }
+
+        if (arr[0][0] == 'X' && arr[1][1] == 'X' && arr[2][2] == 'X' || arr[0][2] == 'X' && arr[1][1] == 'X' && arr[2][0] == 'X')
+        {
+            cout << "Player X Wins ";
+            break;
+        }
+
+        count = count + 2;
+        //    cout<<endl;
+        if (count >= 9)
+        {
+            cout << "Draw ";
+            cout << endl;
+            break;
+        }
+
+        int Yx, Yy;
+        cout << "Player O, enter row and column (0-2) " << endl;
+        cin >> Yx;
+        cin >> Yy;
+        // cout<<endl;
+        bool oPlayerCoordinatesCorrect=false;
+
+        while (!oPlayerCoordinatesCorrect)
+        {
+            if (Yx > 3 || Yy > 3 || arr[Yx][Yy] != 0)
             {
-                if (j<2)
-                {
-                    /* code */
-                    cout<<"   |";
-                }
-                else
-                {
-                    cout<<"   ";
-                    /* code */
-                }
-                
-                
-                
+                cout << "re-enter coordinates as incorrect coordinates entered " << endl;
+                cout << "Player X, enter row and column (0-2) " << endl;
+                cin >> Yx;
+        cin >> Yy;
             }
             else
             {
-                // cout<<"here"<<endl;
-               cout<<" "<<arr[i][j];
-                if (j<2)
-                {
-                cout<<" |";
-                }
-                else
-                {
-                cout<<" ";
-                    
-                } 
+                // cout<<"here2843---Xx:"<<Xx<<"Xy:"<<Xy<<endl;
+                oPlayerCoordinatesCorrect=true;
             }
             
         }
-        cout<<endl;
-        cout<<"     ";
-        if (i<2)
+
+        // while (Xx == Yx && Xy == Yy || arr[Yx][Yy] != 0)
+        // {
+        //     cout << "re-enter coordinates as incorrect coordinates entered "<<endl;
+        //     cout << "Player O, enter row and column (0-2) " << endl;
+        //     cin >> Yx;
+        //     cin >> Yy;
+        // }
+
+        arr[Yx][Yy] = 'O';
+        // Printing table after O Players turn
+
+        for (int i = 0; i < 3; i++)
         {
-        cout<<"-----------";
+            cout << "     ";
+            for (int j = 0; j < 3; j++)
+            {
+                if (arr[i][j] == 0)
+                {
+                    if (j < 2)
+                    {
+                        /* code */
+                        cout << "   |";
+                    }
+                    else
+                    {
+                        cout << "   ";
+                        /* code */
+                    }
+                }
+                else
+                {
+                    // cout<<"here"<<endl;
+                    cout << " " << arr[i][j];
+                    if (j < 2)
+                    {
+                        cout << " |";
+                    }
+                    else
+                    {
+                        cout << " ";
+                    }
+                }
+            }
+            cout << endl;
+            cout << "     ";
+            if (i < 2)
+            {
+                cout << "-----------";
+            }
+            cout << endl;
         }
-        cout<<endl;
-    }
 
-    if (arr[0][0] == 'O' && arr[1][0] == 'O' && arr[2][0] == 'O' || arr[0][1] == 'O' && arr[1][1] == 'O' && arr[2][1] == 'O' || arr[0][2] == 'O' && arr[1][2] == 'O' && arr[2][2] == 'O' )
-       {
-        cout<<"Player O Wins ";
-        break;
-       }
+        if (arr[0][0] == 'O' && arr[1][0] == 'O' && arr[2][0] == 'O' || arr[0][1] == 'O' && arr[1][1] == 'O' && arr[2][1] == 'O' || arr[0][2] == 'O' && arr[1][2] == 'O' && arr[2][2] == 'O')
+        {
+            cout << "Player O Wins ";
+            break;
+        }
 
-       if (arr[0][0] == 'O' && arr[0][1] == 'O' && arr[0][2] == 'O' || arr[1][0] == 'O' && arr[1][1] == 'O' && arr[1][2] == 'O' || arr[2][0] == 'O' && arr[2][1] == 'O' && arr[2][2] == 'O' )
-       {
-        cout<<"Player O Wins ";
-        break;
-       }
+        if (arr[0][0] == 'O' && arr[0][1] == 'O' && arr[0][2] == 'O' || arr[1][0] == 'O' && arr[1][1] == 'O' && arr[1][2] == 'O' || arr[2][0] == 'O' && arr[2][1] == 'O' && arr[2][2] == 'O')
+        {
+            cout << "Player O Wins ";
+            break;
+        }
 
-       if (arr[0][0] == 'O' && arr[1][1] == 'O' && arr[2][2] == 'O' || arr[0][2] == 'O' && arr[1][1] == 'O' && arr[2][0] == 'O' )
-       {
-        cout<<"Player O Wins ";
-        break;
-       }
-            
+        if (arr[0][0] == 'O' && arr[1][1] == 'O' && arr[2][2] == 'O' || arr[0][2] == 'O' && arr[1][1] == 'O' && arr[2][0] == 'O')
+        {
+            cout << "Player O Wins ";
+            break;
+        }
 
-        //cout<<"HELLLOOOOOOOOOO ";
-        // cout<<count;
-        // cout<<endl;
-        // count=count+2;
-        // cout<<endl;
+        // cout<<"HELLLOOOOOOOOOO ";
+        //  cout<<count;
+        //  cout<<endl;
+        //  count=count+2;
+        //  cout<<endl;
 
         // if (count>=9)
         // {
         //     cout<<"Draw ";
         //     break;
         // }
-        
-
-
-
-
-
-
-   }
-    
-
-
-
-
+    }
 
     return 0;
 }
