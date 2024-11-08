@@ -2786,7 +2786,9 @@ int main(){
     //     }
         
     // }
-    
+
+
+    // Printing initial table 
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -2794,14 +2796,19 @@ int main(){
             //cout<<" "<<arr[i][j];
             if (j<2)
             {
-            cout<<" |";
+            cout<<"&&&|";
+            }
+            else{
+                
+            cout<<"&&&";
+
             }
             
         }
         cout<<endl;
         if (i<2)
         {
-        cout<<"-----";
+        cout<<"-----------";
         }
         cout<<endl;
     }
@@ -2827,21 +2834,53 @@ int main(){
     
     arr[Xx][Xy]='X';
 
+    // Printing table after X Players turn
+
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
         {
-            cout<<" "<<arr[i][j];
-            if (j<2)
+            // cout<<"here"<<arr[i][j]<<"here"<<endl;
+            if (arr[i][j]==0)
             {
-            cout<<" |";
+                if (j<2)
+                {
+                    /* code */
+                    cout<<"&&&|";
+                }
+                else
+                {
+                    cout<<"&&&";
+                    /* code */
+                }
+                
+                
+                
             }
+            else
+            {
+                // cout<<"here"<<endl;
+               cout<<"&"<<arr[i][j];
+                if (j<2)
+                {
+                cout<<"&|";
+                }
+                else
+                {
+                cout<<"&";
+                    
+                } 
+            }
+            
+            
+            
+            
             
         }
         cout<<endl;
         if (i<2)
         {
-        cout<<"----------";
+        cout<<"-----------";
         }
         cout<<endl;
     }
@@ -2893,22 +2932,48 @@ int main(){
     
     
     arr[Yx][Yy]='O';
+    // Printing table after O Players turn
 
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
         {
-            cout<<" "<<arr[i][j];
-            if (j<2)
+             if (arr[i][j]==0)
             {
-            cout<<" |";
+                if (j<2)
+                {
+                    /* code */
+                    cout<<"&&&|";
+                }
+                else
+                {
+                    cout<<"&&&";
+                    /* code */
+                }
+                
+                
+                
+            }
+            else
+            {
+                // cout<<"here"<<endl;
+               cout<<"&"<<arr[i][j];
+                if (j<2)
+                {
+                cout<<"&|";
+                }
+                else
+                {
+                cout<<"&";
+                    
+                } 
             }
             
         }
         cout<<endl;
         if (i<2)
         {
-        cout<<"----------";
+        cout<<"-----------";
         }
         cout<<endl;
     }
